@@ -6,9 +6,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
     <div id="root">
-      <h1>Hello world!</h1>
+      <h1>¡Bienvenidx!</h1>
+      <p>En este espacio puedes cifrar y descifrar mensajes para comunicarte con la red de apoyo de manera más segura.</p>
+      <p>Quieres:</p>
+      <button id="btnParaCifrar">Cifrar</button>
+      <button id="btnParaDescifrar">Descifrar</button>
     </div>
+
+    <section id="secCifrar">
+      <h2>Cifrar un mensaje</h2>
+
+      <p>Elige el número de desplazamiento:</p>
+      <input type="number" id="offset">
+
+      <p>Inserta el mensaje a cifrar, en mayúsculas: </p>
+      <textarea rows="10" cols="29" id="mensajeCifrar"></textarea></br>
+      <input type="submit" id="cifrar" value="Cifrar">
+
+      <p>Mensaje cifrado: </p>
+      <p id="letra"></p>
+      <input type="submit" value="Copiar">
+    </section>
+
+    <section id="secDescifrar">
+      <h2>Descifrar un mensaje</h2>
+
+      <p>Elige el número de desplazamiento (del 1 al 25):</p>
+      <input type="text" id="offset1" maxlength="2" minlength="1">
+
+      <p>Inserta el mensaje a descifrar, en mayúsculas: </p>
+      <textarea rows="10" cols="29" id="mensajeCifrar"></textarea></br>
+      <input type="submit" value="Descifrar">
+
+      <p>Mensaje descifrado: </p>
+    </section>
+    
     <script src="index.js" type="module"></script>
   </body>
 </html>
