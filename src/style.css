@@ -1,3 +1,29 @@
+body {
+    color : #141B41;
+    background-color: #ffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+#root {
+    text-align: center;
+    padding-top: 2em;
+}
+
+div {
+    display: inline-block;
+
+}
+
+#Mensaje {
+    padding-left: 5em;
+    padding-top: 3em;
+    padding-bottom: 10em;
+    vertical-align: top;
+
+}
+
 #secCifrar, #secDescifrar{
     display: none;
+    padding: 1em 12em;
 }
