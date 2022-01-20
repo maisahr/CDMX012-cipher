@@ -1,18 +1,45 @@
 const cipher = {
-    encode : function(a, b){
+    encode : function(offset, string){
+      let i = 0
+      let acumulaMensaje = ""
 
-      return ((a - 65) + b) % 26 + 65 // Ciframos ASCII a ASCII
- 
-    },
-
-    decode : function(x, y){
-      let formula = ((x - 65) - y) % 26 + 65
-      if(formula < 65){
-        console.log(formula)
-        formula = formula + 26
+      while(i < string.length){
+          let letra = string.slice(i, i + 1)
+          let letraASCII = Number(letra.charCodeAt())
+          let formula = ((letraASCII - 65) + offset) % 26 + 65
+          let letraNueva = String.fromCharCode(formula)
+          acumulaMensaje += letraNueva
+          i ++
+        
+          if(i == string.length){
+            return acumulaMensaje
+          }
       }
-      return formula
+
     },
+
+    decode : function(offset, string){
+      let i = 0
+      let acumulaMensaje = ""
+
+      while(i < string.length){
+        let letra = string.slice(i, i + 1)
+        let letraASCII = Number(letra.charCodeAt())
+
+        let formula = ((letraASCII - 65) - offset) % 26 + 65
+        if(formula < 65){
+          formula = formula + 26
+        }
+
+        let letraNueva = String.fromCharCode(formula)
+        acumulaMensaje += letraNueva
+        i ++
+
+        if(i == string.length){
+          return acumulaMensaje
+        }
+      }
+    }
 
 };
 
