@@ -6,7 +6,12 @@ const cipher = {
     },
 
     decode : function(x, y){
-      return ((x - 65) - y) % 26 + 65
+      let formula = ((x - 65) - y) % 26 + 65
+      if(formula < 65){
+        console.log(formula)
+        formula = formula + 26
+      }
+      return formula
     },
 
 };

@@ -54,9 +54,9 @@ function descifrar(){
         i ++
 
         if(i == mensajeDescifrar.length){
-            document.getElementById("letraD").innerHTML = /* "Letra ASCII = " + letraASCII
+            document.getElementById("letraD").innerHTML = "Letra ASCII = " + letraASCII
             + "\n Resultado formula = " + formula 
-            + "\n Mensaje = " + */ acumulaMensaje
+            + "\n Mensaje = " +  acumulaMensaje
         }
     }
 }
