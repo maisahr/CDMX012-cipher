@@ -1,29 +1,55 @@
 body {
-    color : #141B41;
-    background-color: #ffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: left;
+    margin: 3.5em 10em 2em;
+    color: #28598f;
+    background-color:#ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#root {
+header {
     text-align: center;
-    padding-top: 2em;
+    box-sizing: content-box;
 }
 
-div {
-    display: inline-block;
-
-}
-
-#Mensaje {
-    padding-left: 5em;
-    padding-top: 3em;
-    padding-bottom: 10em;
-    vertical-align: top;
-
-}
-
-#secCifrar, #secDescifrar{
+main {
     display: none;
-    padding: 1em 12em;
+    box-sizing: content-box;
+}
+
+div, section{
+    display: inline-block;
+    vertical-align: bottom;
+    width: 29em;
+    padding: 1em;
+    margin-left: 0.5em;
+}
+
+div{
+    height: 21em;
+}
+
+section{
+    height: 15.14em;
+}
+
+textarea, #offset, #offsetD{
+    background-color: #c2e2f5;
+    border: none;
+}
+
+.button {
+    background-color: #2e5fa0;
+    color: white;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0.4em;
+    border-radius: 0.2em;
+}
+
+.button:hover {
+    background-color: #a9dbf8;
+    color: black;
+}
+
+#avisoCopiado, #copiar {
+    display: inline;
 }

@@ -1,44 +1,68 @@
 const cipher = {
     encode : function(offset, string){
-      let i = 0
-      let acumulaMensaje = ""
 
-      while(i < string.length){
+      if(typeof(string) === "string"){
+        let i = 0
+        let acumulaMensaje = ""
+
+        while(i < string.length){
           let letra = string.slice(i, i + 1)
           let letraASCII = Number(letra.charCodeAt())
           let formula = ((letraASCII - 65) + offset) % 26 + 65
           let letraNueva = String.fromCharCode(formula)
+          if(letraASCII < 65 || letraASCII > 90){
+            letraNueva = letra;
+          }
           acumulaMensaje += letraNueva
           i ++
         
           if(i == string.length){
             return acumulaMensaje
           }
+        }
+      }
+
+      else{
+        throw new TypeError("El mensaje no es válido.")
       }
 
     },
 
     decode : function(offset, string){
-      let i = 0
-      let acumulaMensaje = ""
 
-      while(i < string.length){
-        let letra = string.slice(i, i + 1)
-        let letraASCII = Number(letra.charCodeAt())
+      if(typeof(string) === "string"){
+        let i = 0
+        let acumulaMensaje = ""
 
-        let formula = ((letraASCII - 65) - offset) % 26 + 65
-        if(formula < 65){
-          formula = formula + 26
-        }
+        while(i < string.length){
+          let letra = string.slice(i, i + 1)
+          let letraASCII = Number(letra.charCodeAt())
 
-        let letraNueva = String.fromCharCode(formula)
-        acumulaMensaje += letraNueva
-        i ++
+          let formula = ((letraASCII - 65) - offset) % 26 + 65
+          if(formula < 65){
+            formula = formula + 26
+          }
 
-        if(i == string.length){
-          return acumulaMensaje
+          let letraNueva = String.fromCharCode(formula)
+
+          if(letraASCII < 65 || letraASCII > 90){
+            letraNueva = letra;
+          }
+          
+          acumulaMensaje += letraNueva
+          i ++
+
+          if(i == string.length){
+            return acumulaMensaje
+          }
+
         }
       }
+
+      else{
+        throw new TypeError("El mensaje no es válido.")
+      }
+      
     }
 
 };

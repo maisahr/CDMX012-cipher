@@ -18,12 +18,10 @@ btnParaDescifrar.addEventListener("click", displayDescifrar)
 
 function cifrar(){
 
-    let mensajeCifrar = document.getElementById("mensajeCifrar").value
+    let mensajeCifrar = document.getElementById("mensajeCifrar").value.toUpperCase()
     let offsetC = Number(document.getElementById("offset").value)
 
-    let cipherCifrado = cipher.encode(offsetC, mensajeCifrar)
-
-    document.getElementById("letra").innerHTML = cipherCifrado
+    document.getElementById("letra").innerHTML = cipher.encode(offsetC, mensajeCifrar)
         
 }
 
@@ -32,7 +30,7 @@ btnCifrar.addEventListener("click", cifrar)
 
 function descifrar(){
 
-    let mensajeDescifrar = document.getElementById("mensajeDescifrar").value
+    let mensajeDescifrar = document.getElementById("mensajeDescifrar").value.toUpperCase()
     let offsetD = Number(document.getElementById("offsetD").value)
 
     document.getElementById("letraD").innerHTML = cipher.decode(offsetD, mensajeDescifrar)
@@ -41,3 +39,13 @@ function descifrar(){
 let btnDescifrar = document.getElementById("descifrar")
 
 btnDescifrar.addEventListener("click", descifrar)
+
+function copiar(){
+    let texto = document.getElementById("letra")
+    texto.select()
+    navigator.clipboard.writeText(texto.value)
+    document.getElementById("avisoCopiado").innerHTML = "¡Mensaje copiado!"
+}
+
+let btnCopiar = document.getElementById("copiar")
+btnCopiar.addEventListener("click", copiar)

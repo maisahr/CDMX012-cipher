@@ -7,15 +7,15 @@
   </head>
   <body>
 
-    <section id="root">
+    <header>
       <h1>¡Bienvenidx!</h1>
       <p>En este espacio puedes cifrar y descifrar mensajes <br> para comunicarte con la red de apoyo de manera más segura.</p>
       <p>Quieres:</p>
-      <button id="btnParaCifrar">Cifrar</button>
-      <button id="btnParaDescifrar">Descifrar</button>
-    </section>
+      <button id="btnParaCifrar" class="button">Cifrar</button>
+      <button id="btnParaDescifrar" class="button">Descifrar</button>
+    </header>
 
-    <section id="secCifrar">
+    <main id="secCifrar">
       <div>
       <h2>Cifrar un mensaje</h2>
 
@@ -23,19 +23,23 @@
       <input type="number" id="offset"> </p>
 
       <p>Inserta el mensaje a cifrar, en mayúsculas: </p>
-      <textarea rows="10" cols="60" id="mensajeCifrar"></textarea></br>
-      <input type="submit" id="cifrar" value="Cifrar">
+      <textarea rows="10" cols="60" id="mensajeCifrar"></textarea><br>
+      <input type="submit" id="cifrar" class="button" value="Cifrar">
       </div>
 
-      <div id = "Mensaje">
+     
+      <section>
         <p><b> Mensaje cifrado: </b></p>
-        <p id="letra"></p>
-        <input type="submit" value="Copiar">
-      </div>
+        <textarea disabled rows="10" cols="60" id="letra"></textarea>
+        <input type="submit" class="button" id="copiar" value="Copiar">
+        <p id="avisoCopiado"></p>
+      </section>
+     
+      
     
-    </section>
+    </main>
 
-    <section id="secDescifrar">
+    <main id="secDescifrar">
       
       <div>
       <h2>Descifrar un mensaje</h2>
@@ -44,16 +48,18 @@
       <input type="number" id="offsetD"></p>
 
       <p>Inserta el mensaje a descifrar, en mayúsculas: </p>
-      <textarea rows="10" cols="60" id="mensajeDescifrar"></textarea></br>
-      <input type="submit" id="descifrar" value="Descifrar">
+      <textarea rows="10" cols="60" id="mensajeDescifrar"></textarea><br>
+      <input type="submit" id="descifrar" class="button" value="Descifrar">
       </div>
 
-      <div id="Mensaje">
+    
+      <section>
         <p><b> Mensaje descifrado: </b></p>
-        <p id="letraD"></p>
-      </div>
+        <textarea disabled rows="10" cols="60" id="letraD"></textarea>
+      </section>
+   
 
-    </section>
+    </main>
     
     
     <script src="index.js" type="module"></script>
