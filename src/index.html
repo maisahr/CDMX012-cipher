@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
@@ -11,56 +12,43 @@
       <h1>¡Bienvenidx!</h1>
       <p>En este espacio puedes cifrar y descifrar mensajes <br> para comunicarte con la red de apoyo de manera más segura.</p>
       <p>Quieres:</p>
-      <button id="btnParaCifrar" class="button">Cifrar</button>
-      <button id="btnParaDescifrar" class="button">Descifrar</button>
+      <button id="btnParaCifrar" class="boton">Cifrar</button>
+      <button id="btnParaDescifrar" class="boton">Descifrar</button>
     </header>
 
     <main id="secCifrar">
-      <div>
+      <div> 
       <h2>Cifrar un mensaje</h2>
-
       <p>Elige el número de desplazamiento:
-      <input type="number" id="offset"> </p>
-
+      <input type="number" id="desplazaC"> </p>
       <p>Inserta el mensaje a cifrar, en mayúsculas: </p>
       <textarea rows="10" cols="60" id="mensajeCifrar"></textarea><br>
-      <input type="submit" id="cifrar" class="button" value="Cifrar">
+      <input type="submit" id="cifrar" class="boton" value="Cifrar">
       </div>
-
      
       <section>
         <p><b> Mensaje cifrado: </b></p>
-        <textarea disabled rows="10" cols="60" id="letra"></textarea>
-        <input type="submit" class="button" id="copiar" value="Copiar">
+        <textarea disabled rows="10" cols="60" id="msjCifrado"></textarea>
+        <input type="submit" class="boton" id="copiar" value="Copiar">
         <p id="avisoCopiado"></p>
       </section>
-     
-      
-    
     </main>
 
     <main id="secDescifrar">
-      
       <div>
-      <h2>Descifrar un mensaje</h2>
-
-      <p>Elige el número de desplazamiento:
-      <input type="number" id="offsetD"></p>
-
-      <p>Inserta el mensaje a descifrar, en mayúsculas: </p>
-      <textarea rows="10" cols="60" id="mensajeDescifrar"></textarea><br>
-      <input type="submit" id="descifrar" class="button" value="Descifrar">
+        <h2>Descifrar un mensaje</h2>
+        <p>Elige el número de desplazamiento:
+        <input type="number" id="desplazaD"></p>
+        <p>Inserta el mensaje a descifrar, en mayúsculas: </p>
+        <textarea rows="10" cols="60" id="mensajeDescifrar"></textarea><br>
+        <input type="submit" id="descifrar" class="boton" value="Descifrar">
       </div>
-
     
       <section>
         <p><b> Mensaje descifrado: </b></p>
-        <textarea disabled rows="10" cols="60" id="letraD"></textarea>
+        <textarea disabled rows="10" cols="60" id="msjDescifrado"></textarea>
       </section>
-   
-
     </main>
-    
     
     <script src="index.js" type="module"></script>
   </body>

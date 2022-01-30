@@ -1,51 +1,51 @@
 import cipher from './cipher.js';
 
-function displayCifrar(){
-    document.getElementById("secDescifrar").style.display = "none"
-    document.getElementById("secCifrar").style.display = "block"
+// Se muestra secCifrar
+function desplegarCifrar(){
+    document.getElementById("secDescifrar").style.display = "none";
+    document.getElementById("secCifrar").style.display = "block";
 }
 
-let btnParaCifrar = document.getElementById("btnParaCifrar")
-btnParaCifrar.addEventListener("click", displayCifrar)
+let btnParaCifrar = document.getElementById("btnParaCifrar"); 
+btnParaCifrar.addEventListener("click", desplegarCifrar);
 
-function displayDescifrar(){
-    document.getElementById("secCifrar").style.display = "none"
-    document.getElementById("secDescifrar").style.display = "block"
+// Se muestra secDescifrar
+function desplegarDescifrar(){
+    document.getElementById("secCifrar").style.display = "none";
+    document.getElementById("secDescifrar").style.display = "block";
 }
 
-let btnParaDescifrar = document.getElementById("btnParaDescifrar")
-btnParaDescifrar.addEventListener("click", displayDescifrar)
+let btnParaDescifrar = document.getElementById("btnParaDescifrar");
+btnParaDescifrar.addEventListener("click", desplegarDescifrar);
 
-function cifrar(){
+// Cifrar mensaje
+function cifrar(){ 
+    let mensajeCifrar = document.getElementById("mensajeCifrar").value.toUpperCase();
+    let numDesplaza = Number(document.getElementById("desplazaC").value);
 
-    let mensajeCifrar = document.getElementById("mensajeCifrar").value.toUpperCase()
-    let offsetC = Number(document.getElementById("offset").value)
-
-    document.getElementById("letra").innerHTML = cipher.encode(offsetC, mensajeCifrar)
-        
+    document.getElementById("msjCifrado").innerHTML = cipher.encode(numDesplaza, mensajeCifrar);  
 }
 
-let btnCifrar = document.getElementById("cifrar")
-btnCifrar.addEventListener("click", cifrar)
+let btnCifrar = document.getElementById("cifrar");
+btnCifrar.addEventListener("click", cifrar);
 
+// Descifrar mensaje
 function descifrar(){
+    let mensajeDescifrar = document.getElementById("mensajeDescifrar").value.toUpperCase();
+    let numDesplaza = Number(document.getElementById("desplazaD").value);
 
-    let mensajeDescifrar = document.getElementById("mensajeDescifrar").value.toUpperCase()
-    let offsetD = Number(document.getElementById("offsetD").value)
-
-    document.getElementById("letraD").innerHTML = cipher.decode(offsetD, mensajeDescifrar)
+    document.getElementById("msjDescifrado").innerHTML = cipher.decode(numDesplaza, mensajeDescifrar);
 }
 
-let btnDescifrar = document.getElementById("descifrar")
+let btnDescifrar = document.getElementById("descifrar");
+btnDescifrar.addEventListener("click", descifrar);
 
-btnDescifrar.addEventListener("click", descifrar)
-
+// Copiar mensaje cifrado
 function copiar(){
-    let texto = document.getElementById("letra")
-    texto.select()
-    navigator.clipboard.writeText(texto.value)
-    document.getElementById("avisoCopiado").innerHTML = "¡Mensaje copiado!"
+    let texto = document.getElementById("msjCifrado").value;
+    navigator.clipboard.writeText(texto);
+    document.getElementById("avisoCopiado").innerHTML = "¡Mensaje copiado!";
 }
 
-let btnCopiar = document.getElementById("copiar")
-btnCopiar.addEventListener("click", copiar)
+let btnCopiar = document.getElementById("copiar");
+btnCopiar.addEventListener("click", copiar);

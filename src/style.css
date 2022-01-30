@@ -7,15 +7,13 @@ body {
 
 header {
     text-align: center;
-    box-sizing: content-box;
 }
 
-main {
+main { /*Las secciones main se esconden*/
     display: none;
-    box-sizing: content-box;
 }
 
-div, section{
+div, section{ /*Las secciones div y section están alineadas desde abajo en inline-block*/
     display: inline-block;
     vertical-align: bottom;
     width: 29em;
@@ -31,12 +29,12 @@ section{
     height: 15.14em;
 }
 
-textarea, #offset, #offsetD{
+textarea, #offset, #offsetD{ /*Cajitas de textos*/
     background-color: #c2e2f5;
     border: none;
 }
 
-.button {
+.boton {
     background-color: #2e5fa0;
     color: white;
     border: none;
@@ -45,11 +43,11 @@ textarea, #offset, #offsetD{
     border-radius: 0.2em;
 }
 
-.button:hover {
+.boton:hover {
     background-color: #a9dbf8;
     color: black;
 }
 
-#avisoCopiado, #copiar {
+#avisoCopiado, #copiar { /*Botón y texto de copiado en la misma línea*/
     display: inline;
 }
